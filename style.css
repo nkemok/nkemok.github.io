@@ -154,3 +154,17 @@ h1 {
   .about-section { padding: 4rem 2rem; }
   .about-body { margin-left: 0; font-size: 1.5rem; }
 }
+
+.logo {
+  color: #ffffff;          /* Keeps text white */
+  text-decoration: none;   /* Removes the default underline */
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  transition: opacity 0.3s ease;
+}
+
+/* Optional: Slight dimming effect when you hover over your name */
+.logo:hover {
+  opacity: 0.8;
+}
