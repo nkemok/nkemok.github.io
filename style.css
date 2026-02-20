@@ -206,34 +206,34 @@ nav a.active {
   text-underline-offset: 8px;
 }
 
-/* Reusable layout for About and Contact pages */
-.subpage-main {
-  height: 100vh;
-  padding: 120px 4rem 0 4rem; /* Top padding accounts for fixed header */
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.subpage-title {
-  font-size: clamp(3rem, 10vw, 7rem);
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  margin: 0;
-}
-
+/* This class ensures the text doesn't stick to the left edge */
 .subpage-content {
   margin-top: 5vh;
-  margin-left: 20%; /* This creates the offset seen in your screenshots */
-  max-width: 900px;
+  margin-left: 20%; /* Adjust this % to match your 'About' page exactly */
+  max-width: 800px;  /* Keeps the lines from getting too wide */
 }
 
 .subpage-content p {
-  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
-  line-height: 1.2;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  line-height: 1.4;
   color: #ffffff;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
+
+/* Style for your links to remove the default blue/purple color */
+.social-link {
+  display: block; /* Puts each link on a new line */
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: #d4f01e; /* Your signature lime color */
+}
+
 
 /* Styling for the email link */
 .email-link {
