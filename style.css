@@ -206,6 +206,58 @@ nav a.active {
   text-underline-offset: 8px;
 }
 
+.contact-page {
+  padding: 160px 4rem 0 4rem; /* More top padding to clear the nav */
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.page-title {
+  font-size: clamp(4rem, 12vw, 9rem); /* Large, bold title */
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  margin: 0 0 4rem 0; /* Space between title and body */
+  line-height: 0.9;
+}
+
+.contact-content {
+  /* This creates the 'About Page' offset */
+  margin-left: 20%; 
+  max-width: 700px;
+}
+
+.contact-description {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-links a {
+  color: rgba(255, 255, 255, 0.5); /* Muted gray like your previous reference */
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #ffffff;
+}
+
+
+
+
 /* This class ensures the text doesn't stick to the left edge */
 .subpage-content {
   margin-top: 5vh;
