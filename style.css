@@ -1,94 +1,114 @@
-/* --- Nkem's Brutalist Design System --- */
-
 :root {
-    --bg-color: #0a0a0a;
-    --text-color: #e0e0e0;
-    --accent-color: #d1ff24; /* Neon Lime */
-    --font-mono: 'Courier New', Courier, monospace;
+    --bg-dark: #050505;
+    --text-dim: #a1a1aa;
+    --text-white: #ffffff;
+    --accent-pink: #ff4d94; /* Match the icons in your screenshot */
 }
 
 body {
-    background-color: var(--bg-color);
-    /* This creates the grainy texture from your screenshot */
-    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
-    color: var(--text-color);
-    font-family: var(--font-mono);
-    text-transform: uppercase; /* Brutalist style often uses all caps */
+    background: radial-gradient(circle at top right, #1a1a1a, #050505);
+    color: var(--text-dim);
+    font-family: 'Inter', sans-serif;
     margin: 0;
-    padding: 0;
-}
-
-/* --- Navigation Header --- */
-nav {
+    overflow-x: hidden;
+    height: 100vh;
     display: flex;
-    justify-content: space-between;
-    padding: 30px;
-    font-weight: bold;
+    align-items: center;
+    justify-content: center;
 }
 
-.nav-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    margin-left: 20px;
-    border: 1px solid transparent;
+/* Background Grain Effect */
+.grain-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 1;
 }
 
-.nav-links a:hover {
-    color: var(--accent-color);
-    content: " [ ]"; /* Adds brackets on hover like the screenshot */
-}
-
-/* --- Hero Layout --- */
-.hero {
+.hero-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 50px;
-    gap: 20px;
-    min-height: 80vh;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    width: 85%;
+    max-width: 1200px;
+    z-index: 2;
 }
 
-.status-info {
-    font-size: 0.9rem;
-    line-height: 1.5;
+/* Typography Styling */
+h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--text-white);
+    margin: 0;
+    line-height: 1.1;
 }
 
-.status-info span {
-    color: var(--accent-color);
-    display: block;
+.highlight {
+    font-weight: 400;
+    color: var(--text-white);
 }
 
-/* The Polaroid Image Effect */
-.profile-pic {
-    width: 250px;
-    background: #fff;
-    padding: 15px 15px 50px 15px; /* Bottom padding creates the polaroid look */
-    transform: rotate(-3deg);
-    box-shadow: 10px 10px 0px var(--accent-color);
-    margin: 0 auto;
+.icon {
+    font-size: 2.5rem;
+    filter: drop-shadow(0 0 10px var(--accent-pink));
 }
 
-.profile-pic img {
+.bio {
+    margin-top: 40px;
+    font-size: 1.2rem;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.white-text { color: var(--text-white); font-weight: 600; }
+
+/* Polaroid Styling */
+.polaroid-frame {
+    background: white;
+    padding: 15px 15px 60px 15px;
+    transform: rotate(5deg);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    width: 300px;
+    position: relative;
+}
+
+.profile-img {
     width: 100%;
-    filter: grayscale(100%); /* Makes your photo match the vibe */
+    height: 350px;
+    object-fit: cover;
 }
 
-/* --- Features & Buttons --- */
-.features {
-    text-align: right;
-    align-self: end;
+.handwriting {
+    font-family: 'Brush Script MT', cursive; /* Rough handwriting look */
+    color: #333;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 15px;
 }
 
-.btn-more {
-    display: inline-block;
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
-    padding: 10px 25px;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: all 0.2s;
+/* Let's Connect Badge */
+.connect-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -40px;
+    width: 120px;
+    height: 120px;
+    animation: rotate 10s linear infinite;
 }
 
-.btn-more:hover {
-    background: var(--accent-color);
-    color: #000;
+.connect-badge text { fill: white; font-weight: bold; text-transform: uppercase; }
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.arrow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: white;
 }
