@@ -1,52 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nkem | UX Designer</title>
-    <style>
-        /* Quick Inline CSS to get you started */
-        body { font-family: sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; }
-        nav { padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; }
-        .hero { padding: 80px 5%; background: #f9f9f9; text-align: center; }
-        .projects { padding: 50px 5%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card { border: 1px solid #eee; padding: 20px; border-radius: 8px; }
-        .btn { background: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <nav>
-    <div class="logo">[NKEM_OK]</div>
-    <div class="nav-links">
-        <a href="#">[WORK]</a>
-        <a href="#">[ABOUT]</a>
-        <a href="#">[RESUME]</a>
-    </div>
-</nav>
 
-<section class="hero">
-    <div class="status-info">
-        STATUS INFORMATION:<br>
-        PRODUCT DESIGNER<br>
-        & STRATEGIST AT<br>
-        <span>NKEMOK.GITHUB.IO</span>
-    </div>
+    <div class="grain-overlay"></div>
 
-    <div class="profile-wrap">
-        <div class="profile-pic">
-            <img src="amber photo.jpg" alt="Nkem">
-        </div>
-    </div>
+    <main class="hero-container">
+        <section class="hero-text">
+            <h1>I design products that</h1>
+            <h1 class="highlight">Engage <span class="icon">👆</span></h1>
+            <h1 class="highlight">Convert <span class="icon">🔄</span></h1>
+            <h1 class="highlight">& Scale <span class="icon">📈</span></h1>
+            
+            <p class="bio">
+                I’m a <strong>UX Designer</strong> with a passion for 
+                <span class="white-text">simplifying complexity</span> in SaaS & B2C products.
+            </p>
+        </section>
 
-    <div class="features">
-        FEATURES:<br>
-        EXPERIENCE DESIGN<br>
-        INTERFACE DESIGN<br>
-        DESIGN STRATEGY<br>
-        VISUAL DESIGN<br>
-        <a href="#" class="btn-more">MORE INFO</a>
-    </div>
-</section>
+        <section class="hero-visual">
+            <div class="polaroid-frame">
+                <img src="your-photo.jpg" alt="Nkem" class="profile-img">
+                <p class="handwriting">Hey! I'm Nkem :)</p>
+            </div>
+            <div class="connect-badge">
+                <svg viewBox="0 0 100 100">
+                    <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+                    <text font-size="12">
+                        <textPath xlink:href="#circlePath">LET'S CONNECT • GET IN TOUCH • </textPath>
+                    </text>
+                </svg>
+                <div class="arrow">↗</div>
+            </div>
+        </section>
+    </main>
+
 </body>
 </html>
