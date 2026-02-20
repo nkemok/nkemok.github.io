@@ -1,130 +1,94 @@
-/* --- Nkem's UX Portfolio Design System --- */
+/* --- Nkem's Brutalist Design System --- */
 
 :root {
-    --primary: #0f172a;    /* Deep Navy */
-    --accent: #6366f1;     /* Modern Indigo */
-    --text-main: #334155;  /* Slate Gray */
-    --bg-light: #ffffff;
-    --bg-subtle: #f8fafc;
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --bg-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --accent-color: #d1ff24; /* Neon Lime */
+    --font-mono: 'Courier New', Courier, monospace;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--text-main);
-    background-color: var(--bg-light);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
+    background-color: var(--bg-color);
+    /* This creates the grainy texture from your screenshot */
+    background-image: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+    color: var(--text-color);
+    font-family: var(--font-mono);
+    text-transform: uppercase; /* Brutalist style often uses all caps */
+    margin: 0;
+    padding: 0;
 }
 
-/* --- Navigation --- */
+/* --- Navigation Header --- */
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 2rem 10%;
-    position: sticky;
-    top: 0;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    z-index: 100;
+    padding: 30px;
+    font-weight: bold;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--primary);
-    letter-spacing: -1px;
-}
-
-nav a {
+.nav-links a {
+    color: var(--text-color);
     text-decoration: none;
-    color: var(--text-main);
-    font-weight: 500;
-    margin-left: 2rem;
-    transition: var(--transition);
+    margin-left: 20px;
+    border: 1px solid transparent;
 }
 
-nav a:hover {
-    color: var(--accent);
+.nav-links a:hover {
+    color: var(--accent-color);
+    content: " [ ]"; /* Adds brackets on hover like the screenshot */
 }
 
-/* --- Hero Section --- */
+/* --- Hero Layout --- */
 .hero {
-    padding: 8rem 10% 4rem;
-    max-width: 900px;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    color: var(--primary);
-    margin-bottom: 1.5rem;
-    letter-spacing: -2px;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: var(--text-main);
-    margin-bottom: 2rem;
-}
-
-/* --- Work Grid --- */
-.projects {
-    padding: 4rem 10%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 50px;
+    gap: 20px;
+    min-height: 80vh;
 }
 
-.card {
-    background: var(--bg-subtle);
-    border-radius: 24px;
-    padding: 2.5rem;
-    border: 1px solid #e2e8f0;
-    transition: var(--transition);
-    cursor: pointer;
+.status-info {
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+.status-info span {
+    color: var(--accent-color);
+    display: block;
 }
 
-.card h3 {
-    font-size: 1.5rem;
-    color: var(--primary);
-    margin-bottom: 0.75rem;
+/* The Polaroid Image Effect */
+.profile-pic {
+    width: 250px;
+    background: #fff;
+    padding: 15px 15px 50px 15px; /* Bottom padding creates the polaroid look */
+    transform: rotate(-3deg);
+    box-shadow: 10px 10px 0px var(--accent-color);
+    margin: 0 auto;
 }
 
-.card p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+.profile-pic img {
+    width: 100%;
+    filter: grayscale(100%); /* Makes your photo match the vibe */
 }
 
-.btn {
+/* --- Features & Buttons --- */
+.features {
+    text-align: right;
+    align-self: end;
+}
+
+.btn-more {
     display: inline-block;
-    background: var(--primary);
-    color: white !important;
-    padding: 0.8rem 1.8rem;
-    border-radius: 12px;
-    font-weight: 600;
-    transition: var(--transition);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 10px 25px;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: all 0.2s;
 }
 
-.btn:hover {
-    background: var(--accent);
-}
-
-/* --- Responsive Design --- */
-@media (max-width: 768px) {
-    .hero h1 { font-size: 2.5rem; }
-    .projects { grid-template-columns: 1fr; }
+.btn-more:hover {
+    background: var(--accent-color);
+    color: #000;
 }
