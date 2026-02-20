@@ -281,6 +281,20 @@ nav a.active {
   transform: scaleX(1);    /* Animates the underline in */
 }
 
+/* This targets the specific lime color from your design */
+.inline-link, 
+.inline-link:visited {
+  color: #d4f01e;          /* Your signature lime green */
+  text-decoration: none;   /* Removes the default blue underline */
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+/* Adds a hover effect for better user feedback */
+.inline-link:hover {
+  opacity: 0.7;
+  text-decoration: underline; /* Optional: adds a lime underline on hover */
+}
 
 /* The circular crosshair icon from your reference */
 .icon-detail {
