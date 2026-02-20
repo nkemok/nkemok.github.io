@@ -223,33 +223,35 @@ nav a.active {
   line-height: 0.9;
 }
 
-/* Style for your links to remove the default blue/purple color */
+/* Container to help with spacing */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds vertical space between Email and LinkedIn */
+    margin-top: 20px;
+}
+
+/* The actual link styling */
 .social-link {
-  display: block; /* Puts each link on a new line */
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
+    color: rgba(255, 255, 255, 0.6); /* Muted white/grey color */
+    text-decoration: none;           /* Removes the default underline */
+    font-size: 1.2rem;
+    transition: color 0.3s ease;     /* Smooth color change on hover */
+    width: fit-content;
 }
 
+/* Hover state */
 .social-link:hover {
-  color: #d4f01e; /* Your signature lime color */
+    color: #ffffff;                  /* Bright white on hover */
+    text-decoration: underline;      /* Optional: add underline only on hover */
+}
+
+/* Fix for visited links (prevents them from turning purple) */
+.social-link:visited {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 
-/* Styling for the email link */
-.email-link {
-  color: #d4f01e; /* Using your signature lime green */
-  text-decoration: none;
-  font-size: 1.5rem;
-  border-bottom: 1px solid transparent;
-  transition: border 0.3s ease;
-}
-
-.email-link:hover {
-  border-bottom: 1px solid #d4f01e;
-}
 
 /* The circular crosshair icon from your reference */
 .icon-detail {
