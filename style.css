@@ -205,3 +205,56 @@ nav a.active {
   text-decoration: underline;
   text-underline-offset: 8px;
 }
+
+/* Reusable layout for About and Contact pages */
+.subpage-main {
+  height: 100vh;
+  padding: 120px 4rem 0 4rem; /* Top padding accounts for fixed header */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.subpage-title {
+  font-size: clamp(3rem, 10vw, 7rem);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  margin: 0;
+}
+
+.subpage-content {
+  margin-top: 5vh;
+  margin-left: 20%; /* This creates the offset seen in your screenshots */
+  max-width: 900px;
+}
+
+.subpage-content p {
+  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+/* Styling for the email link */
+.email-link {
+  color: #d4f01e; /* Using your signature lime green */
+  text-decoration: none;
+  font-size: 1.5rem;
+  border-bottom: 1px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.email-link:hover {
+  border-bottom: 1px solid #d4f01e;
+}
+
+/* The circular crosshair icon from your reference */
+.icon-detail {
+  position: absolute;
+  top: 150px;
+  right: 5%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
