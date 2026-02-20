@@ -306,3 +306,69 @@ nav a.active {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
 }
+
+/* Grid Container */
+.projects-grid {
+    margin-left: 20%; /* Matches your About/Contact offset */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two items per row */
+    gap: 4rem 2rem; /* Vertical and horizontal spacing */
+    padding-bottom: 100px;
+}
+
+/* Individual Card */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.project-image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Elegant vertical crop */
+    background-color: #1a1a1a; /* Placeholder color while images load */
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.project-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); /* Optional: matches your minimalist vibe */
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.03);
+    filter: grayscale(0%); /* Brings color back on hover */
+}
+
+/* Typography for Projects */
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-year {
+    font-size: 0.8rem;
+    color: #d4f01e; /* Your signature lime color */
+    font-family: monospace;
+}
+
+.project-name {
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .projects-grid {
+        margin-left: 0; /* Stack full width on mobile */
+        grid-template-columns: 1fr;
+    }
+}
