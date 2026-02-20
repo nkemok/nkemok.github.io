@@ -223,55 +223,6 @@ nav a.active {
   line-height: 0.9;
 }
 
-.contact-content {
-  /* This creates the 'About Page' offset */
-  margin-left: 20%; 
-  max-width: 700px;
-}
-
-.contact-description {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  line-height: 1.2;
-  color: #ffffff;
-  margin-bottom: 3rem;
-  letter-spacing: -0.02em;
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.contact-links a {
-  color: rgba(255, 255, 255, 0.5); /* Muted gray like your previous reference */
-  text-decoration: none;
-  font-size: 1.2rem;
-  text-transform: capitalize;
-  transition: color 0.3s ease;
-}
-
-.contact-links a:hover {
-  color: #ffffff;
-}
-
-
-
-
-/* This class ensures the text doesn't stick to the left edge */
-.subpage-content {
-  margin-top: 5vh;
-  margin-left: 20%; /* Adjust this % to match your 'About' page exactly */
-  max-width: 800px;  /* Keeps the lines from getting too wide */
-}
-
-.subpage-content p {
-  font-size: clamp(1.2rem, 2.5vw, 2rem);
-  line-height: 1.4;
-  color: #ffffff;
-  margin-bottom: 2.5rem;
-}
-
 /* Style for your links to remove the default blue/purple color */
 .social-link {
   display: block; /* Puts each link on a new line */
