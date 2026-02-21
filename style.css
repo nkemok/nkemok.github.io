@@ -187,3 +187,47 @@ nav a.active {
     gap: 4rem;
   }
 }
+
+/* Homepage Specific Layout */
+.hero-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem; /* Standard side padding */
+    background-color: #000000;
+}
+
+.hero-text {
+    /* Large scale typography */
+    font-size: clamp(3.5rem, 8vw, 7.5rem); 
+    font-weight: 500;
+    line-height: 0.9;      /* Tight line height is crucial for this look */
+    letter-spacing: -0.05em; /* Tight letter spacing */
+    color: #ffffff;
+    margin: 0;
+}
+
+/* The lime green accent */
+.lime-text {
+    color: #d4f01e; 
+}
+
+/* Ensure the + icon stays in the bottom right corner */
+.home-page .icon-detail {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 1.2rem;
+    opacity: 0.4;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 0 2rem;
+    }
+    .hero-text {
+        font-size: 3.5rem; /* Smaller but still bold on phones */
+        line-height: 1.0;
+    }
+}
