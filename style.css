@@ -188,28 +188,39 @@ nav a.active {
   }
 }
 
-/* Homepage Specific Layout */
+/* Fix for the Navbar visibility */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures nav stays on top of the big text */
+    background: transparent; /* Keep it clean */
+}
+
+/* Updated Hero Container */
 .hero-container {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    align-items: center;
-    padding: 0 4rem; /* Standard side padding */
+    flex-direction: column;
+    justify-content: flex-start; /* Start from top instead of center */
+    padding: 180px 4rem 0 4rem; /* 180px top padding clears the nav */
     background-color: #000000;
+    box-sizing: border-box;
 }
 
 .hero-text {
-    /* Large scale typography */
-    font-size: clamp(3.5rem, 8vw, 7.5rem); 
+    font-size: clamp(3.5rem, 8.5vw, 8rem); /* Slightly larger to match screenshot */
     font-weight: 500;
-    line-height: 0.9;      /* Tight line height is crucial for this look */
-    letter-spacing: -0.05em; /* Tight letter spacing */
+    line-height: 0.85; /* Extremely tight to match your reference */
+    letter-spacing: -0.05em;
     color: #ffffff;
     margin: 0;
+    text-transform: none; /* Ensure it's not forcing All Caps unless you want it */
 }
 
-/* The lime green accent */
 .lime-text {
-    color: #d4f01e; 
+    color: #d4f01e;
 }
 
 /* Ensure the + icon stays in the bottom right corner */
