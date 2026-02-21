@@ -80,24 +80,29 @@ nav a.active {
   margin-bottom: 2rem;
 }
 
-/* 4. HOMEPAGE HERO (Specific) */
+.hero-text {
+    /* Reduced from 8.5vw/8rem to 7vw/6.5rem */
+    font-size: clamp(3rem, 7vw, 6.5rem); 
+    
+    font-weight: 500;
+    
+    /* Slightly relaxed from 0.85 to 0.95 to clear the nav better */
+    line-height: 0.95; 
+    
+    letter-spacing: -0.04em;
+    color: #ffffff;
+    margin: 0;
+    text-transform: none;
+}
+
 .hero-container {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centered vertically on desktop */
+    justify-content: center; /* You can go back to centering now */
     padding: 0 4rem;
     background-color: #000000;
     box-sizing: border-box;
-}
-
-.hero-text {
-    font-size: clamp(3.5rem, 8.5vw, 8rem);
-    font-weight: 500;
-    line-height: 0.85; 
-    letter-spacing: -0.05em;
-    color: #ffffff;
-    margin: 0;
 }
 
 .lime-text {
