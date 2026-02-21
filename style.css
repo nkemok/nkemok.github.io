@@ -307,9 +307,15 @@ nav a.active {
   border-radius: 50%;
 }
 
+.content-wrapper {
+    margin-left: 20%;
+    padding-right: 4rem; /* Prevents text from hitting the right edge */
+}
+
+
 /* Grid Container */
 .projects-grid {
-    margin-left: 20%; /* Matches your About/Contact offset */
+    margin-left: 0; /* Matches your About/Contact offset */
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two items per row */
     gap: 4rem 2rem; /* Vertical and horizontal spacing */
