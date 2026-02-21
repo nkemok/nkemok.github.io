@@ -378,7 +378,7 @@ nav a.active {
        '2 / 1' is twice as wide as it is tall.
        '16 / 9' is a standard cinematic wide look.
     */
-    aspect-ratio: 32 / 18; 
+    aspect-ratio: 64 / 36; 
     
     width: 100%;       /* Allow it to fill the grid column width */
     overflow: hidden;
