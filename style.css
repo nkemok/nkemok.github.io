@@ -398,12 +398,4 @@ nav a.active {
     /* object-position: center top; */
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    
-    /* Increase the second value (horizontal gap) */
-    gap: 4rem 5rem; 
-    
-    margin-left: 20%;
-}
+
