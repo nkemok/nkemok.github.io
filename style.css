@@ -2,7 +2,7 @@
 :root {
   --bg-color: #000000;
   --text-primary: #ffffff;
-  --text-accent: #d4f01e; /* High-viz lime */
+  --text-accent: #d4f01e; 
 }
 
 body {
@@ -14,16 +14,19 @@ body {
   overflow-x: hidden;
 }
 
-/* 2. NAVIGATION */
+/* 2. NAVIGATION (Fixed & Consolidated) */
 .navbar {
   display: flex;
   justify-content: space-between;
   padding: 3rem 4rem;
-  position: fixed; /* Keep nav visible */
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   box-sizing: border-box;
-  z-index: 100;
-  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  /* Glassmorphism effect so links stay readable */
+  background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
 }
 
@@ -34,10 +37,6 @@ body {
   font-size: 1.1rem;
   letter-spacing: -0.02em;
   transition: opacity 0.3s ease;
-}
-
-.logo:hover {
-  opacity: 0.8;
 }
 
 nav a {
@@ -59,16 +58,10 @@ nav a.active {
 
 /* 3. SHARED PAGE LAYOUT (About, Contact, Projects) */
 .about-main, .contact-page, .projects-main {
-  padding: 160px 4rem 100px 4rem;
+  padding: 180px 4rem 100px 4rem; /* Standardized top padding to clear navbar */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-/* Use this wrapper in your HTML to handle the 20% indent */
-.content-wrapper {
-  margin-left: 20%;
-  width: 100%;
 }
 
 .about-title, .page-title {
@@ -76,23 +69,47 @@ nav a.active {
   font-weight: 500;
   letter-spacing: -0.05em;
   line-height: 0.9;
-  margin: 0 0 4rem 20%; /* Standardized indent */
+  margin: 0 0 4rem 20%; 
 }
 
 .about-content p, .description-text {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   line-height: 1.2;
   max-width: 850px;
-  margin-left: 20%; /* Standardized indent */
+  margin-left: 20%;
   margin-bottom: 2rem;
 }
 
-/* 4. PROJECTS GRID */
+/* 4. HOMEPAGE HERO (Specific) */
+.hero-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centered vertically on desktop */
+    padding: 0 4rem;
+    background-color: #000000;
+    box-sizing: border-box;
+}
+
+.hero-text {
+    font-size: clamp(3.5rem, 8.5vw, 8rem);
+    font-weight: 500;
+    line-height: 0.85; 
+    letter-spacing: -0.05em;
+    color: #ffffff;
+    margin: 0;
+}
+
+.lime-text {
+    color: var(--text-accent);
+}
+
+/* 5. PROJECTS GRID */
 .projects-grid {
-  margin-left: 20%; /* Standardized indent */
+  margin-left: 20%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 6rem 3rem; /* Airy vertical spacing */
+  gap: 6rem 3rem;
 }
 
 .project-card {
@@ -104,7 +121,7 @@ nav a.active {
 
 .project-image-wrapper {
   width: 100%;
-  aspect-ratio: 16 / 9; /* Standardized wide landscape */
+  aspect-ratio: 16 / 9;
   background-color: #1a1a1a;
   overflow: hidden;
   margin-bottom: 1.5rem;
@@ -130,32 +147,17 @@ nav a.active {
   margin-bottom: 0.5rem;
 }
 
-.project-name {
-  font-size: 1.2rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin: 0;
-}
-
-/* 5. HYPERLINKS & INTERACTIVE */
+/* 6. INTERACTIVE & DECORATIVE */
 .inline-link, .inline-link:visited {
   color: var(--text-accent);
   text-decoration: none;
   font-weight: 500;
-  transition: opacity 0.3s ease;
 }
 
-.inline-link:hover {
-  opacity: 0.7;
-  text-decoration: underline;
-}
-
-/* 6. DECORATIVE ELEMENTS */
 .icon-detail {
-  position: fixed; /* Stays visible while scrolling */
-  bottom: 5%;
-  right: 5%;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
   width: 40px;
   height: 40px;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -164,10 +166,11 @@ nav a.active {
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.3);
-  pointer-events: none; /* Won't block clicks */
+  font-size: 1.2rem;
+  pointer-events: none;
 }
 
-/* 7. RESPONSIVENESS */
+/* 7. RESPONSIVENESS (Consolidated) */
 @media (max-width: 1024px) {
   .about-title, .page-title, .about-content p, .projects-grid {
     margin-left: 10%;
@@ -176,69 +179,26 @@ nav a.active {
 
 @media (max-width: 768px) {
   .navbar { padding: 2rem; }
-  .about-main, .contact-page, .projects-main { padding: 120px 2rem; }
   
+  .about-main, .contact-page, .projects-main { 
+    padding: 120px 2rem; 
+  }
+
+  .hero-container {
+    padding: 120px 2rem 0 2rem; /* Clear nav on mobile */
+  }
+
   .about-title, .page-title, .about-content p, .projects-grid {
     margin-left: 0;
   }
-  
+
+  .hero-text {
+    font-size: 3.2rem;
+    line-height: 1.0;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 4rem;
   }
-}
-
-/* Fix for the Navbar visibility */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Ensures nav stays on top of the big text */
-    background: transparent; /* Keep it clean */
-}
-
-/* Updated Hero Container */
-.hero-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Start from top instead of center */
-    padding: 180px 4rem 0 4rem; /* 180px top padding clears the nav */
-    background-color: #000000;
-    box-sizing: border-box;
-}
-
-.hero-text {
-    font-size: clamp(3.5rem, 8.5vw, 8rem); /* Slightly larger to match screenshot */
-    font-weight: 500;
-    line-height: 0.85; /* Extremely tight to match your reference */
-    letter-spacing: -0.05em;
-    color: #ffffff;
-    margin: 0;
-    text-transform: none; /* Ensure it's not forcing All Caps unless you want it */
-}
-
-.lime-text {
-    color: #d4f01e;
-}
-
-/* Ensure the + icon stays in the bottom right corner */
-.home-page .icon-detail {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    font-size: 1.2rem;
-    opacity: 0.4;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .hero-container {
-        padding: 0 2rem;
-    }
-    .hero-text {
-        font-size: 3.5rem; /* Smaller but still bold on phones */
-        line-height: 1.0;
-    }
 }
