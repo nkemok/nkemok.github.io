@@ -109,12 +109,18 @@ nav a.active {
     color: var(--text-accent);
 }
 
-/* 5. PROJECTS GRID */
 .projects-grid {
-  margin-left: 20%;
+  /* Use padding instead of margin to keep the grid container 100% wide */
+  padding-left: 20%; 
+  padding-right: 4rem; /* Match your site's standard side padding */
+  
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* Use minmax to prevent cards from getting too tiny */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6rem 3rem;
+  
+  box-sizing: border-box; /* Crucial: ensures padding doesn't add to width */
+  width: 100%;
 }
 
 .project-card {
