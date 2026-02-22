@@ -14,7 +14,7 @@ body {
   overflow-x: hidden;
 }
 
-/* 2. NAVIGATION (Fixed & Consolidated) */
+/* 2. NAVIGATION */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -25,7 +25,6 @@ body {
   width: 100%;
   box-sizing: border-box;
   z-index: 1000;
-  /* Glassmorphism effect so links stay readable */
   background-color: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(10px);
 }
@@ -58,7 +57,11 @@ nav a.active {
 
 /* 3. SHARED PAGE LAYOUT (About, Contact, Projects) */
 .about-main, .contact-page, .projects-main {
-  padding: 180px 4rem 100px 4rem; /* Standardized top padding to clear navbar */
+  padding-top: 180px; 
+  padding-bottom: 100px;
+  /* Removed side padding to let the 20% offset control alignment */
+  padding-left: 0;
+  padding-right: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -69,6 +72,7 @@ nav a.active {
   font-weight: 500;
   letter-spacing: -0.05em;
   line-height: 0.9;
+  /* Fixed 20% left margin */
   margin: 0 0 4rem 20%; 
 }
 
@@ -80,46 +84,39 @@ nav a.active {
   margin-bottom: 2rem;
 }
 
-.hero-text {
-    /* Reduced from 8.5vw/8rem to 7vw/6.5rem */
-    font-size: 7rem; 
-    
-    font-weight: 500;
-    
-    /* Slightly relaxed from 0.85 to 0.95 to clear the nav better */
-    line-height: 0.95; 
-    
-    letter-spacing: -0.04em;
-    color: #ffffff;
-    margin: 0;
-    text-transform: none;
+/* 4. HOMEPAGE HERO */
+.hero-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  padding: 0 4rem;
+  background-color: #000000;
+  box-sizing: border-box;
 }
 
-.hero-container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* You can go back to centering now */
-    padding: 0 4rem;
-    background-color: #000000;
-    box-sizing: border-box;
+.hero-text {
+  font-size: clamp(3rem, 7vw, 6.5rem); 
+  font-weight: 500;
+  line-height: 0.95; 
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin: 0;
 }
 
 .lime-text {
-    color: var(--text-accent);
+  color: var(--text-accent);
 }
 
+/* 5. PROJECTS GRID */
 .projects-grid {
-  /* Use padding instead of margin to keep the grid container 100% wide */
-  padding-left: 20%; 
-  padding-right: 4rem; /* Match your site's standard side padding */
-  
+  /* Using padding-left to match the title's margin-left */
+  padding-left: 20%;  
+  padding-right: 6rem; 
   display: grid;
-  /* Use minmax to prevent cards from getting too tiny */
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 6rem 3rem;
-  
-  box-sizing: border-box; /* Crucial: ensures padding doesn't add to width */
+  box-sizing: border-box; 
   width: 100%;
 }
 
@@ -151,11 +148,24 @@ nav a.active {
   filter: grayscale(0%);
 }
 
+.project-card:hover .project-name {
+  color: var(--text-accent);
+  transition: color 0.3s ease;
+}
+
 .project-year {
   font-size: 0.8rem;
   color: var(--text-accent);
   font-family: monospace;
   margin-bottom: 0.5rem;
+}
+
+.project-name {
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
 }
 
 /* 6. INTERACTIVE & DECORATIVE */
@@ -181,19 +191,69 @@ nav a.active {
   pointer-events: none;
 }
 
-/* Prevent the background from scrolling when modal is open */
+/* 7. MODAL OVERLAY (Project Details) */
 .modal-open {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-/* 7. RESPONSIVENESS (Fixed) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+  z-index: 2000;
+  overflow-y: auto;
+}
+
+.project-modal {
+  background: #121417;
+  width: 100%;
+  max-width: 1100px;
+  border-radius: 12px;
+  padding: 60px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modal-title {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 2rem;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+.detail-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+/* 8. RESPONSIVENESS */
 @media (max-width: 1200px) {
-  /* Reduce the 20% gap to 10% for tablets */
   .about-title, .page-title, .about-content p {
     margin-left: 10%;
   }
   .projects-grid {
     padding-left: 10%;
+    padding-right: 4rem;
   }
 }
 
@@ -204,99 +264,19 @@ nav a.active {
     padding: 120px 1.5rem; 
   }
 
-  .hero-container {
-    padding: 120px 1.5rem 0 1.5rem;
-  }
-
-  /* Remove all offsets for mobile so text/grid fills the screen */
   .about-title, .page-title, .about-content p {
     margin-left: 0;
-    margin-bottom: 2rem;
   }
   
   .projects-grid {
     padding-left: 0;
     padding-right: 0;
-    grid-template-columns: 1fr; /* Stack projects vertically */
-    gap: 3rem;
+    grid-template-columns: 1fr;
+    gap: 4rem;
   }
 
   .hero-text {
     font-size: 2.8rem;
     line-height: 1.1;
   }
-
-  .project-modal {
-    padding: 30px 20px;
-  }
-  
-  .modal-title {
-    font-size: 2rem;
-  }
-}
-
-
-/* 1. The Semi-Transparent Background */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85); /* Darken background */
-    backdrop-filter: blur(8px);      /* Blur the projects page behind it */
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;         /* Start from top for scrolling */
-    padding: 60px 20px;
-    z-index: 2000;
-    overflow-y: auto;                /* Allows long project stories to scroll */
-}
-
-/* 2. The Project Card (Matching your screenshot) */
-.project-modal {
-    background: #121417;             /* Darker navy/grey from your image */
-    width: 100%;
-    max-width: 1100px;
-    border-radius: 12px;
-    padding: 60px;
-    position: relative;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-}
-
-/* 3. Typography & UI Elements */
-.modal-title {
-    font-size: 4rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 10px;
-}
-
-.accent-plus {
-    color: #ff6b00; /* Matching that orange '+' in your reference */
-}
-
-.close-btn {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    font-size: 2rem;
-    color: #ffffff;
-    text-decoration: none;
-    opacity: 0.6;
-}
-
-.modal-section h3 {
-    font-size: 1.5rem;
-    margin: 40px 0 10px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 10px;
-}
-
-.detail-image {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 40px;
-    border: 1px solid rgba(255,255,255,0.05);
 }
