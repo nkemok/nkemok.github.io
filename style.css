@@ -207,3 +207,73 @@ nav a.active {
     gap: 4rem;
   }
 }
+
+/* Prevent the background from scrolling when modal is open */
+.modal-open {
+    overflow: hidden;
+}
+
+/* 1. The Semi-Transparent Background */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85); /* Darken background */
+    backdrop-filter: blur(8px);      /* Blur the projects page behind it */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;         /* Start from top for scrolling */
+    padding: 60px 20px;
+    z-index: 2000;
+    overflow-y: auto;                /* Allows long project stories to scroll */
+}
+
+/* 2. The Project Card (Matching your screenshot) */
+.project-modal {
+    background: #121417;             /* Darker navy/grey from your image */
+    width: 100%;
+    max-width: 1100px;
+    border-radius: 12px;
+    padding: 60px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* 3. Typography & UI Elements */
+.modal-title {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 10px;
+}
+
+.accent-plus {
+    color: #ff6b00; /* Matching that orange '+' in your reference */
+}
+
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 2rem;
+    color: #ffffff;
+    text-decoration: none;
+    opacity: 0.6;
+}
+
+.modal-section h3 {
+    font-size: 1.5rem;
+    margin: 40px 0 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+.detail-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 40px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
