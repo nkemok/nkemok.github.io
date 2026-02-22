@@ -181,10 +181,19 @@ nav a.active {
   pointer-events: none;
 }
 
-/* 7. RESPONSIVENESS (Consolidated) */
-@media (max-width: 1024px) {
-  .about-title, .page-title, .about-content p, .projects-grid {
+/* Prevent the background from scrolling when modal is open */
+.modal-open {
+    overflow: hidden;
+}
+
+/* 7. RESPONSIVENESS (Fixed) */
+@media (max-width: 1200px) {
+  /* Reduce the 20% gap to 10% for tablets */
+  .about-title, .page-title, .about-content p {
     margin-left: 10%;
+  }
+  .projects-grid {
+    padding-left: 10%;
   }
 }
 
@@ -192,32 +201,40 @@ nav a.active {
   .navbar { padding: 2rem; }
   
   .about-main, .contact-page, .projects-main { 
-    padding: 120px 2rem; 
+    padding: 120px 1.5rem; 
   }
 
   .hero-container {
-    padding: 120px 2rem 0 2rem; /* Clear nav on mobile */
+    padding: 120px 1.5rem 0 1.5rem;
   }
 
-  .about-title, .page-title, .about-content p, .projects-grid {
+  /* Remove all offsets for mobile so text/grid fills the screen */
+  .about-title, .page-title, .about-content p {
     margin-left: 0;
+    margin-bottom: 2rem;
+  }
+  
+  .projects-grid {
+    padding-left: 0;
+    padding-right: 0;
+    grid-template-columns: 1fr; /* Stack projects vertically */
+    gap: 3rem;
   }
 
   .hero-text {
-    font-size: 3.2rem;
-    line-height: 1.0;
+    font-size: 2.8rem;
+    line-height: 1.1;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
-    gap: 4rem;
+  .project-modal {
+    padding: 30px 20px;
+  }
+  
+  .modal-title {
+    font-size: 2rem;
   }
 }
 
-/* Prevent the background from scrolling when modal is open */
-.modal-open {
-    overflow: hidden;
-}
 
 /* 1. The Semi-Transparent Background */
 .modal-overlay {
