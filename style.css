@@ -280,3 +280,38 @@ nav a.active {
     line-height: 1.1;
   }
 }
+
+/* Layout for the info inside the modal */
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.modal-sidebar .modal-section h3 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+    border: none; /* Removing the border for cleaner sidebar */
+}
+
+.modal-sidebar p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.detail-image-container {
+    margin-top: 4rem;
+    width: 100%;
+}
+
+/* Ensure the modal is readable on small screens */
+@media (max-width: 768px) {
+    .modal-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
