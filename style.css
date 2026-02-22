@@ -86,22 +86,30 @@ nav a.active {
 
 /* 4. HOMEPAGE HERO */
 .hero-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; 
-  padding: 0 4rem;
-  background-color: #000000;
-  box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Start from top to control the vertical gap from the logo */
+    justify-content: flex-start; 
+    
+    /* 4rem left padding matches the .navbar padding exactly */
+    padding: 160px 4rem 0 4rem; 
+    
+    background-color: #000000;
+    box-sizing: border-box;
 }
 
 .hero-text {
-  font-size: clamp(3rem, 7vw, 6.5rem); 
-  font-weight: 500;
-  line-height: 0.95; 
-  letter-spacing: -0.04em;
-  color: #ffffff;
-  margin: 0;
+    /* Adjusted font size to prevent overflow while keeping it bold */
+    font-size: clamp(3.5rem, 8vw, 8.5rem); 
+    font-weight: 500;
+    line-height: 0.85; 
+    letter-spacing: -0.05em;
+    color: #ffffff;
+    margin: 0;
+    
+    /* Ensures the text starts at the zero-point of the container */
+    text-align: left; 
 }
 
 .lime-text {
