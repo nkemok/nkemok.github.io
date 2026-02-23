@@ -32,25 +32,49 @@
                         <div class="modal-section">
                             <h3 class="lime-text">Objective</h3>
                             <p>
-                                Lorem...
-
+                                Trap Events Management was redesigned to modernize how SNMP traps are received, configured, and acted upon within the platform. 
+                                Traps play a critical role in real-time network monitoring, yet the existing experience treated them primarily as 
+                                backend technical artifacts rather than actionable operational signals.
+                                <p>The objective was to create a cohesive workflow that strengthened secure trap ingestion, improved event visibility, 
+                                and closed monitoring gaps caused by undiscovered devices. Rather than focusing solely on UI improvements, 
+                                the goal was to transform traps into a reliable and proactive event management system that could scale with enterprise environments.</p>
                             </p>
                         </div>
                         <div class="modal-section">
                             <h3 class="lime-text">Problem statement</h3>
                             <p>
-                               Lorem...
-
-
+                                SNMP traps are asynchronous notifications sent by network devices to signal events such as failures, 
+                                thresholds, or status changes. While powerful, they introduce complexity in configuration, ingestion, and interpretation.
+                                
+                                <p>The previous trap management experience presented several challenges. Configuration workflows lacked clarity, 
+                                particularly as customers increasingly adopted SNMPv3 for enhanced security. 
+                                The setup process was technical and error-prone, making it difficult for teams to confidently enable secure trap reception.</p>
+                                
+                                <p>Once traps were received, the Logged Traps interface functioned largely as a raw event list. 
+                                While technically comprehensive, it lacked the structure and filtering needed for efficient triage during high-volume alert scenarios.</p>
+                               
+                                <p>A more critical gap emerged around unknown traps. When traps were received from devices not yet discovered in the system, 
+                                they were visible but disconnected from any meaningful next step. Users could see the signal, but there was no integrated 
+                                path to onboard the device generating it. This created operational blind spots, particularly in dynamic environments where new devices were frequently introduced.</p>
+                               
+                                <p>The system was ingesting data successfully, but the experience failed to unify ingestion, visibility, and discovery into a seamless workflow.</p>
                             </p>
                         </div>
                         <div class="modal-section">
                             <h3 class="lime-text">Design process</h3>
                             <p>
-                                Lorem...
-
-
-
+                                Discovery involved close collaboration with engineering, product, and customer-facing teams to understand both the 
+                                technical underpinnings of trap ingestion and the operational pain points experienced by customers.
+                                
+                                <p>Technical discussions surfaced about the growing importance of SNMPv3 and the need for a more structured receiver model. 
+                                At the same time, support insights revealed that teams often struggled to interpret trap volume and 
+                                differentiate between meaningful signals and background noise.</p>
+                                
+                                <p>The most compelling insight centered on unknown traps. These events represented early signals from devices not 
+                                yet formally onboarded into the system. Instead of treating them as edge cases, they could be repositioned as proactive discovery triggers.</p>
+                                
+                                <p>This reframed the initiative. The opportunity was not only to improve configuration and visibility, 
+                            but to connect traps directly to device lifecycle management.</p>
                             </p>
                         </div>
                         <div class="modal-section">
