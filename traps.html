@@ -75,19 +75,52 @@
                                 
                                 <p>This reframed the initiative. The opportunity was not only to improve configuration and visibility, 
                             but to connect traps directly to device lifecycle management.</p>
+
+                                <p>The most compelling insight centered on unknown traps. These events represented early signals from devices not yet 
+                                    formally onboarded into the system. Instead of treating them as edge cases, they could be repositioned as proactive discovery triggers.
+                                    This reframed the initiative. The opportunity was not only to improve configuration and visibility, but to connect traps directly to device lifecycle management.</p>
                             </p>
                         </div>
                         <div class="modal-section">
                             <h3 class="lime-text">Design process</h3>
                             <p>
-                               Lorem...
+                                The redesign began with low-fidelity wireframes focused purely on workflow clarity. Early sketches explored how to separate 
+                                configuration, logged traps, and unknown traps into distinct but connected experiences. 
+                                The priority at this stage was information hierarchy and mental model validation, not visual refinement.
+                                
+                                <p>For the trap events editor, low-fi iterations tested different groupings of SNMPv3 fields to reduce cognitive load. 
+                                Authentication, encryption, and credential inputs were reorganized multiple times to ensure a logical setup sequence. 
+                                These wireframes were reviewed with engineering to validate technical alignment before investing in higher fidelity.
+                                Mid-fidelity prototypes introduced interaction states and validation feedback. Real-time error messaging, receiver status indicators, 
+                                and inline guidance were tested to reduce setup ambiguity. This phase focused heavily on preventing configuration fragility.</p>
+                                
+                                <p>For logged traps, wireframes explored density and scanability. Multiple layout variations were evaluated to balance metadata visibility with readability 
+                                under high-volume conditions. Filtering and contextual expansion patterns were refined through iteration to support faster triage.
+                                The unknown traps workflow required the most conceptual exploration. Early concepts treated unknown traps as a separate static list. Iteration revealed that 
+                                this reinforced the existing gap. The final direction integrated discovery directly into the event view, allowing users to 
+                                initiate device onboarding from the trap itself. High-fidelity designs emphasized clear differentiation between known and 
+                                unknown sources while surfacing actionable next steps.</p>
+                                
+                                <p>The transition to high-fidelity design focused on clarity of state, visual hierarchy, and alignment with the broader SaaS design system. 
+                                Status indicators, severity levels, and discovery prompts were refined to communicate system behavior without overwhelming users. 
+                                Close collaboration with engineering ensured backend ingestion logic and frontend mental models remained consistent.</p>
 
                             </p>
                         </div>
                         <div class="modal-section">
                             <h3 class="lime-text">Final deliverables</h3>
                             <p>
-                                Lorem...
+                                The final solution included a redesigned trap events editor with integrated SNMPv3 Receiver configuration, 
+                                enabling secure and reliable trap ingestion. The logged traps interface was enhanced to support efficient 
+                                triage through improved hierarchy and filtering. A new unknown traps workflow connected event visibility directly to device discovery, 
+                                closing monitoring gaps and strengthening operational continuity. High-fidelity prototypes and detailed specifications ensured accurate implementation and alignment across teams.
+                               
+                                <p>The trap events management redesign transformed traps from a technical backend feature into a cohesive event management system.
+                                Secure SNMPv3 adoption became more accessible through clearer configuration workflows. Logged traps evolved into a 
+                                usable operational tool for high-volume environments. Most significantly, unknown traps were 
+                                repositioned as proactive discovery signals, reducing monitoring blind spots and improving responsiveness in dynamic enterprise networks.
+                                By unifying ingestion, visibility, and discovery, the experience now supports a more reliable, transparent, and scalable approach to real-time network event management.</p>
+
                             </p>
                         </div>
   
