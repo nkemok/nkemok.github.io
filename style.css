@@ -324,48 +324,59 @@ nav a.active {
     }
 }
 
-/* Individual Card Styling */
-.dribbble-card {
-    position: relative;
-    width: 100%;
-    border-radius: 12px;
+
+/* 1. The Container */
+.carousel-container {
     overflow: hidden;
-    background: #111;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-/* The Title Area */
-.card-info {
-    padding: 15px;
-    background: #000;
-    text-align: left;
-}
-
-.card-info span {
-    color: #fff;
-    font-size: 0.9rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
-}
-
-/* High-Contrast Hover Effects */
-.dribbble-card:hover {
-    transform: translateY(-10px);
-    border-color: #bef133; /* Your Lime Green */
-    box-shadow: 0 20px 40px rgba(190, 241, 51, 0.1);
-}
-
-.dribbble-card:hover .card-info span {
-    color: #bef133; /* Text turns green on hover */
-}
-
-/* Ensure images fill the card */
-.carousel-slide img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    padding: 80px 0; /* More space above/below like the screenshot */
+    background: #000;
+}
+
+/* 2. The Track - Slower & Smoother */
+.carousel-track {
+    display: flex;
+    /* (Card Width + Gap) * Total number of cards */
+    width: calc((280px + 30px) * 8); 
+    gap: 30px; 
+    /* Changed from 20s to 45s for a slow, elegant glide */
+    animation: scroll 45s linear infinite; 
+}
+
+/* 3. The Card - Matching your screenshot's vertical look */
+.dribbble-card {
+    width: 280px;
+    flex-shrink: 0;
+    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.dribbble-card img {
+    width: 100%;
+    height: 400px; /* Taller height for that 'Portrait' gallery look */
+    object-fit: cover; /* This prevents the 'squashed' look */
+    border-radius: 2px; /* Very subtle roundness */
     display: block;
+    filter: brightness(0.8); /* Slightly dimmed like the screenshot */
+    transition: all 0.5s ease;
+}
+
+/* 4. Hover State */
+.carousel-track:hover {
+    animation-play-state: paused; /* Allows users to stop and look */
+}
+
+.dribbble-card:hover img {
+    filter: brightness(1);
+    transform: scale(1.02);
+}
+
+/* 5. The Infinite Animation Loop */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Move left by exactly half the track (width of 4 cards + gaps) */
+        transform: translateX(calc((-280px - 30px) * 4));
+    }
 }
