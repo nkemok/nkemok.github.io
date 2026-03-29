@@ -323,3 +323,49 @@ nav a.active {
         gap: 2rem;
     }
 }
+
+/* Individual Card Styling */
+.dribbble-card {
+    position: relative;
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* The Title Area */
+.card-info {
+    padding: 15px;
+    background: #000;
+    text-align: left;
+}
+
+.card-info span {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* High-Contrast Hover Effects */
+.dribbble-card:hover {
+    transform: translateY(-10px);
+    border-color: #bef133; /* Your Lime Green */
+    box-shadow: 0 20px 40px rgba(190, 241, 51, 0.1);
+}
+
+.dribbble-card:hover .card-info span {
+    color: #bef133; /* Text turns green on hover */
+}
+
+/* Ensure images fill the card */
+.carousel-slide img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
