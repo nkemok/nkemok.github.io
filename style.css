@@ -326,9 +326,6 @@ nav a.active {
 
 .highlight {
     color: #FF4500; /* This is your new Orange-Red */
-    /* This adds a tiny bit of 'heat' to the text */
-    text-shadow: 0 0 10px rgba(255, 69, 0, 0.2); 
-    transition: all 0.3s ease;
 }
 
 
