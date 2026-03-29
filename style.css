@@ -360,23 +360,23 @@ nav a.active {
     transition: all 0.5s ease;
 }
 
-/* 4. Hover State */
-.carousel-track:hover {
-    animation-play-state: paused; /* Allows users to stop and look */
-}
 
 .dribbble-card:hover img {
     filter: brightness(1);
     transform: scale(1.02);
 }
 
-/* 5. The Infinite Animation Loop */
+
+.carousel-track {
+    /* (Width of 280px + Gap of 30px) * 16 total images */
+    width: calc((280px + 30px) * 16); 
+    animation: scroll 60s linear infinite; /* 60s is very slow and gallery-like */
+}
+
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        /* Move left by exactly half the track (width of 4 cards + gaps) */
-        transform: translateX(calc((-280px - 30px) * 4));
+    0% { transform: translateX(0); }
+    100% { 
+        /* Reset after exactly 8 images (half the track) */
+        transform: translateX(calc((-280px - 30px) * 8)); 
     }
 }
