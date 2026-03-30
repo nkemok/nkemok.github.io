@@ -1,0 +1,19 @@
+{{ define "main" }}
+<main class="projects-main">
+    <h1 class="page-title">{{ .Title | default "featured work" }}</h1>
+    <div class="projects-grid">
+        {{ range .Pages.ByWeight }}
+        <a href="{{ .RelPermalink }}" class="project-card">
+            <div class="project-image-wrapper">
+                <img src="{{ .Params.thumbnail | relURL }}" alt="{{ .Params.company }}">
+            </div>
+            <div class="project-details">
+                <span class="project-year">{{ .Params.company }}</span>
+                <h2 class="project-name">{{ .Title }}</h2>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+    <div class="icon-detail">+</div>
+</main>
+{{ end }}

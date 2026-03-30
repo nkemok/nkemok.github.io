@@ -1,0 +1,15 @@
+{{ define "main" }}
+<main class="projects-main">
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="projects-grid">
+        {{ range .Pages.ByDate.Reverse }}
+        <a href="{{ .RelPermalink }}" class="project-card">
+            <div class="project-details">
+                <span class="project-year">{{ .Date.Format "January 2, 2006" }}</span>
+                <h2 class="project-name">{{ .Title }}</h2>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+</main>
+{{ end }}

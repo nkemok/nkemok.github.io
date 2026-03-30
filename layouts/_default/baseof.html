@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+{{ partial "head.html" . }}
+{{ $bodyClass := .Params.body_class | default "" }}
+{{ if eq .Kind "home" }}
+    {{ $bodyClass = "home-page" }}
+{{ else if in (slice "about" "contact" "about me" "say hello") (lower .Title) }}
+    {{ $bodyClass = "about-page-body" }}
+{{ else if and (eq .Section "projects") .IsPage }}
+    {{ $bodyClass = "modal-open" }}
+{{ end }}
+<body class="{{ trim $bodyClass " " }}">
+    {{ partial "header.html" . }}
+    {{ block "main" . }}
+    {{ end }}
+</body>
+</html>

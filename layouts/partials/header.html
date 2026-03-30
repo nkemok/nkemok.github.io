@@ -1,0 +1,10 @@
+<header class="navbar">
+    <a href="{{ "/" | relURL }}" class="logo">nkem okafor</a>
+    <nav>
+        {{ $currentUrl := .RelPermalink }}
+        <a href="{{ "/projects" | relURL }}" {{ if hasPrefix $currentUrl "/projects" }}class="active"{{ end }}>projects</a>
+        <a href="{{ "/artboard" | relURL }}" {{ if hasPrefix $currentUrl "/artboard" }}class="active"{{ end }}>artboard</a>
+        <a href="{{ "/about" | relURL }}" {{ if eq $currentUrl "/about/" }}class="active"{{ end }}>about</a>    
+        <a href="{{ "/contact" | relURL }}" {{ if eq $currentUrl "/contact/" }}class="active"{{ end }}>contact</a>
+    </nav>
+</header>

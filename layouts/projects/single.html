@@ -1,0 +1,26 @@
+{{ define "main" }}
+<div class="modal-overlay">
+    <article class="project-modal">
+        <a href="{{ "/projects" | relURL }}" class="close-btn">✕</a>
+        <header class="modal-header">
+            <span class="project-year">{{ .Params.company }}</span>
+            <h1 class="modal-title">{{ .Title }}</h1>
+        </header>
+
+        <div class="modal-body">
+            <div class="modal-grid">
+                <aside class="modal-sidebar">
+                    <div class="modal-section">
+                        <h3>Role + Timeline</h3>
+                        <p>{{ .Params.role }}</p>
+                    </div>
+                </aside>
+
+                <div class="modal-main-content">
+                    {{ .Content }}
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+{{ end }}
