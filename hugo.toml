@@ -3,4 +3,8 @@ languageCode = "en-us"
 title = "Nkem Okafor"
 
 [markup.goldmark.renderer]
-unsafe = true
+  unsafe = true
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
