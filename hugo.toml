@@ -1,0 +1,6 @@
+baseURL = "https://nkemok.github.io/"
+languageCode = "en-us"
+title = "Nkem Okafor"
+
+[markup.goldmark.renderer]
+unsafe = true

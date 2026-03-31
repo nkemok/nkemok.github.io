@@ -1,0 +1,23 @@
+{{ define "main" }}
+<main class="about-main">
+  <h1 class="about-title">{{ .Title }}</h1>
+  <div class="about-content">{{ .Content }}</div>
+
+  {{ if .Params.carousel }}
+  <section class="carousel-container">
+    <div class="carousel-track">
+      {{ range seq 2 }} {{ range $.Params.carousel }}
+      <div class="carousel-slide">
+        <div class="dribbble-card">
+          <img src="{{ .image | safeURL }}" alt="{{ .title }}" />
+          <div class="card-info"><span>{{ .title }}</span></div>
+        </div>
+      </div>
+      {{ end }} {{ end }}
+    </div>
+  </section>
+  {{ end }}
+
+  <div class="icon-detail">+</div>
+</main>
+{{ end }}
